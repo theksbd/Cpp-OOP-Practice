@@ -43,23 +43,23 @@ public:
         double AB = this->getDistance(b);
         return (OA * OA + OB * OB - AB * AB) / (2 * OA * OB);
     }
-    bool isPassOrigin(Point b)
-    {
-        // return true if the vector created by this Point and Point p passes the Origin O(0,0)
-        if ((this->x == b.getX() && this->x == 0) || this->y == b.getY() && this->y == 0)
-            return true;
+    // bool isPassOrigin(Point b)
+    // {
+    //     // return true if the vector created by this Point and Point p passes the Origin O(0,0)
+    //     if ((this->x == b.getX() && this->x == 0) || this->y == b.getY() && this->y == 0)
+    //         return true;
 
-        if (
-            (double)(this->x - (int)this->x) == 0 && (double)(this->y - (int)this->y) == 0 &&
-            (double)(b.getX() - (int)b.getX()) == 0 && (double)(b.getY() - (int)b.getY() == 0))
-        {
-            if (this->x == this->y && b.getX() == b.getY())
-                return true;
-            if (this->x == this->y * -1 && b.getX() == b.getY() * -1)
-                return true;
-        }
-        return false;
-    }
+    //     if (
+    //         (double)(this->x - (int)this->x) == 0 && (double)(this->y - (int)this->y) == 0 &&
+    //         (double)(b.getX() - (int)b.getX()) == 0 && (double)(b.getY() - (int)b.getY() == 0))
+    //     {
+    //         if (this->x == this->y && b.getX() == b.getY())
+    //             return true;
+    //         if (this->x == this->y * -1 && b.getX() == b.getY() * -1)
+    //             return true;
+    //     }
+    //     return false;
+    // }
 };
 
 int main()
@@ -74,7 +74,7 @@ int main()
         int selection = 0;
         cout << "1. Calculate distance between two point.\n";
         cout << "2. Calculate the angel between two points.\n";
-        cout << "3. Check if the vector of two point passes by the Origin(0,0).\n";
+        // cout << "3. Check if the vector of two point passes by the Origin(0,0).\n";
         cout << "Make your choice: ";
         cin >> selection;
         cout << "\nResult: ";
@@ -86,12 +86,12 @@ int main()
         case 2:
             cout << "Cos = " << A.getAngle(B) << endl;
             break;
-        case 3:
-            if (A.isPassOrigin(B))
-                cout << "Yes, it is :)\n";
-            else
-                cout << "No, it isn't :(\n";
-            break;
+        // case 3:
+        //     if (A.isPassOrigin(B))
+        //         cout << "Yes, it is :)\n";
+        //     else
+        //         cout << "No, it isn't :(\n";
+        //     break;
         default:
             cout << "Wrong choice, you fool!!\n";
             break;
